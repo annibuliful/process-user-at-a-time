@@ -31,7 +31,7 @@ app.post<any, any, { message: string }, { userId: string }>(
     });
 
     if (lock) {
-      res.send({
+      res.status(409).send({
         message: `user: ${lock.userId} is processing this route`,
       });
       return;
